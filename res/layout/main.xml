@@ -3,11 +3,37 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:gravity="center"
         >
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Mango edit"
-            />
+    <ImageView
+            android:id="@+id/login_logoimg"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:adjustViewBounds="true"
+            android:gravity="center"
+            android:src="@drawable/bg_ico" />
+    <LinearLayout android:id="@+id/operation_area"
+                  android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+            >
+        <EditText
+                android:id="@+id/e_phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="Phone Number..."
+                />
+        <Button
+                android:id="@+id/b_attack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Attack"
+                android:textSize="30dip"
+                android:background="@drawable/button"
+                />
+    </LinearLayout>
+
 </LinearLayout>
 
