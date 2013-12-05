@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+
+<resources><!--
     <string-array name="get">
         <item name="百度">https://passport.baidu.com/v2/?regphonesend&#38;token=2938da2551105a3bd4d52d07522eb391&#38;tpl=mn&#38;apiver=v3&#38;tt=1380623035456&#38;phone={tel}&#38;callback=bd__cbs__r08hpy</item>
         <item name="阿里巴巴">http://member.1688.com//member/ajax/send_identity_code_by_mobile.do?callback=jQuery172035555203282274306_1380646026370&#38;mobile={tel}&#38;area=86&#38;isBizMobile=true</item>
@@ -40,6 +41,7 @@
         <item name="360（二）">http://w.yunpan.360.cn/intf.php?method=Sms.issue&#38;qid=177256015&#38;devtype=box&#38;v=1.9.2.1245&#38;devid=5b5b55bfc9f1f3113963b1f1350adc65&#38;devname=&#38;rtick=6969759&#38;sign=aa8d029e8036f3f9d555956388dc4c57&#38;ofmt=xml&#38;pid=home&#38;mobile={tel}&#38;contype=mdu&#38;token=3708649921.6.95535003.177256015.1366401362</item>
         <item name="凡客诚品">https://login.vancl.com/login/BeginRegister.ashx?action=sendmobilecode&#38;key={tel}&#38;validatecode=&#38;_=1363498730859</item>
         <item name="挂号网">http://www.guahao.com/validcode/json/mobile/{tel}/REG_MOBILE/cebaf071614ac29f9ad6c692b474a46f?_=1366925898545</item>
-    </string-array>
+    </string-array>-->
 
 </resources>
+
