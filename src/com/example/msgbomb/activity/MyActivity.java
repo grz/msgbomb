@@ -1,18 +1,22 @@
-package com.example.msgbomb;
+package com.example.msgbomb.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import com.example.msgbomb.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MyActivity extends Activity {
     private EditText e_phoneNumber;
-    private Button b_attack;
+    private ImageButton b_attack;
     /**
      * Called when the activity is first created.
      */
@@ -22,22 +26,24 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         e_phoneNumber = (EditText) findViewById(R.id.e_phoneNumber);
-        b_attack = (Button) findViewById(R.id.b_attack);
+        b_attack = (ImageButton) findViewById(R.id.b_attack);
         b_attack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                attack(e_phoneNumber.getText().toString());
+                boolean isSuitedNum = validateNum(e_phoneNumber.getText().toString());
+                if(isSuitedNum){
+                    attack();
+                }else{
+
+                }
             }
         });
     }
 
-    public void attack(String num){
-        boolean isSuitedNum = validateNum(num);
-        if(isSuitedNum){
-            bombToast("等bingzi就能公鸡了!",false);
-        }else{
+    public void attack(){
 
-        }
+        //先执行后台逻辑再跑动画
+        startAnimation(b_attack, R.anim.bombing);
     }
 
     public boolean validateNum(String num){
@@ -60,6 +66,29 @@ public class MyActivity extends Activity {
         }else{
             Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void startAnimation(View v,int id){
+        Animation bombing = AnimationUtils.loadAnimation(this,id);
+        if(bombing != null){
+            bombing.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    bombToast("fighting...",false);
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    bombToast("end",false);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                    bombToast("Repeat",false);
+                }
+            });
+        }
+        v.startAnimation(bombing);
 
     }
 }
