@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="get">
+        <item name="百度">https://passport.baidu.com/v2/?regphonesend&#38;token=2938da2551105a3bd4d52d07522eb391&#38;tpl=mn&#38;apiver=v3&#38;tt=1380623035456&#38;phone={tel}&#38;callback=bd__cbs__r08hpy</item>
+        <item name="阿里巴巴">http://member.1688.com//member/ajax/send_identity_code_by_mobile.do?callback=jQuery172035555203282274306_1380646026370&#38;mobile={tel}&#38;area=86&#38;isBizMobile=true</item>
+        <item name="新浪微博">http://weibo.com/signup/v5/formcheck?type=sendsms&#38;value={tel}&#38;zone=0086&#38;__rnd=1380647301924</item>
+        <item name="盛大通行证">http://t.sdo.com/home/SendSms?mobile={tel}&#38;t=0.05995206208899617</item>
+        <item name="手机优酷">http://www.youku.com/user_getCode/?__rt=1&#38;__ro=&#38;mobile={tel}</item>
+        <item name="苏宁易购">https://member.suning.com/emall/SNCellPhoneRegisterCmd?actionType=reSendValCode&#38;logonId={tel}&#38;URL=SNUserRegisterComfirmView&#38;_=1363500974671</item>
+        <item name="空中网">http://passport.kongzhong.com/ajax/sendsmscode/reg/{tel}?t=0.01464914996176958</item>
+        <item name="拉手网">http://lashou.com/ajax/signmobile.php?act=send_code&#38;bind_mobile={tel}</item>
+        <item name="钱旺网">https://www.qianwang365.com/uc/ajax/obtainSecurityCode4Regist.html?username={tel}</item>
+        <item name="协同通信">https://ecplive.cn/reg/servlet/ivrInvokeServlet?number={tel}&#38;flagNum=3</item>
+        <item name="飞聊">http://f.10086.cn/im5/register/checkMobile.action?mobileNo={tel}</item>
+        <item name="麦包包">http://www.mbaobao.com/user/SendAgainSms?mobile={tel}&#38;d=1380653251</item>
+        <item name="汽车之家">http://dealer.autohome.com.cn/Handler/SendMessage.ashx?action=sendcode&#38;mob={tel}</item>
+        <item name="手机阅读（一）">http://wap.cmread.com/sso/oauth2/msisdnRegister?e_l=1&amp;f=7718&amp;pg=221&#38;msisdn={tel}&#38;passwd=1415926</item>
+        <item name="手机阅读（二）">http://wap.cmread.com/sso/p/bolt_actiate.jsp?msisdn={tel}</item>
+        <item name="手机阅读（三）">http://wap.cmread.com/sso/oauth2/msisdnRegister?e_l=1&#38;f=7718&#38;pg=221&#38;msisdn={tel}</item>
+        <item name="中国移动（一）">http://a.10086.cn/pams2/s/s.do?c=204&#38;j=l&#38;lpt=1&#38;mobile={tel}&#38;p=72</item>
+        <item name="中国移动（二）">http://read.10086.cn/www/firstpage/getValidateCode.action?phone={tel}&#38;sf=0</item>
+    </string-array>
+    <string-array name="post">
+        <item name="网易邮箱">http://reg.email.163.com/unireg/call.do?cmd=added.mobileverify.sendAcode||mobile:{tel}||uid:{tel}@163.com||mark:mobile_start</item>
+        <item name="网易邮箱-移动版">https://ssl.mail.163.com/e.mail.163.com/mobilemail/wap/vCodeSend.do||mobile:{tel}</item>
+        <item name="新浪邮箱">http://mail.sina.com.cn/cgi-bin/phonecode.php||phonenumber:{tel}</item>
+        <item name="巨人通行证">http://reg.ztgame.com/registe/mobilePhoneRegister||type:isBindPhoneNum||phoneNum:{tel}</item>
+        <item name="大众点评">http://t.dianping.com/ajax/newregister||action:sendVerify||phone:{tel}</item>
+        <item name="上海大众">http://www.mysvw.com/cssc/Register.do?actionFlag=sendmessage||vmobile:{tel}</item>
+        <item name="久游网">https://passport.9you.com/sendmobilecode.php||mobile:{tel}||dataType:json</item>
+        <item name="腾付通">http://www.tftpay.com/newweb/service/nsend_chk_no.xhtm||REG_MBL_NO:{tel}</item>
+        <item name="金山逍遥">http://my.xoyo.com/register/newSendPhone/0.7138306448145767||phone:{tel}</item>
+        <item name="微录客">http://www.vlook.cn/ajx/n/user.sendMobileForRegistValidateCode11||mobileNum:{tel}||vlkId:5df808d79f20b670a4c2b5fc6c0541dc</item>
+        <item name="完美世界">http://passport.wanmei.com/NoteAction.do?method=sendRegCode||mobile:{tel}</item>
+        <item name="汽车之家">http://account.autohome.com.cn/accountapi/createmobilecode||phone:{tel}||validcodetype:1</item>
+        <item name="搜狐微博">http://w.sohu.com/t2/qreg.do?suv=93874000235781||mobile:{tel}</item>
+        <item name="世纪佳缘">http://reg.jiayuan.com/libs/xajax/reguser.server.php?processUserMobile||xajax:processUserMobile||xajaxargs[]:&#60;xjxquery\&#62;&#60;q&#62;mobile={tel}&#60;&#60;/q&#62;&#60;/xjxquery&#62;||xajaxr:1380652724645</item>
+        <item name="朋友网">http://api.pengyou.com/json.php?mod=mobilebind&#38;act=sendsms&#38;mobile={tel}&#38;g_tk=null</item>
+        <item name="360（一）">http://i.360.cn/smsApi/sendsmscode?account={tel}&#38;condition=2&#38;r=0.8326570473673853&#38;callback=QiUserJsonP1354551431282</item>
+        <item name="360（二）">http://w.yunpan.360.cn/intf.php?method=Sms.issue&#38;qid=177256015&#38;devtype=box&#38;v=1.9.2.1245&#38;devid=5b5b55bfc9f1f3113963b1f1350adc65&#38;devname=&#38;rtick=6969759&#38;sign=aa8d029e8036f3f9d555956388dc4c57&#38;ofmt=xml&#38;pid=home&#38;mobile={tel}&#38;contype=mdu&#38;token=3708649921.6.95535003.177256015.1366401362</item>
+        <item name="凡客诚品">https://login.vancl.com/login/BeginRegister.ashx?action=sendmobilecode&#38;key={tel}&#38;validatecode=&#38;_=1363498730859</item>
+        <item name="挂号网">http://www.guahao.com/validcode/json/mobile/{tel}/REG_MOBILE/cebaf071614ac29f9ad6c692b474a46f?_=1366925898545</item>
+    </string-array>
+
+</resources>
