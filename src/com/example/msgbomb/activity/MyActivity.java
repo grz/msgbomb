@@ -1,13 +1,12 @@
 package com.example.msgbomb.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -66,6 +65,16 @@ public class MyActivity extends Activity {
                 boolean isSuitedNum = validateNum(num);
                 if(isSuitedNum){
                     attack(num);
+                    new AlertDialog.Builder(MyActivity.this).
+                            setTitle("结果").
+                            setMessage("就在刚刚，你已经对" + num+"实行轰炸"+ HttpService.getTotalAttack()+"次"
+                                    +"\n成功次数：" + HttpService.getSucTotalAttack()
+                                    +"\n失败次数："+ HttpService.getEroTotalAttack()).setPositiveButton("确定",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).create().show();
                 }else{
 
                 }

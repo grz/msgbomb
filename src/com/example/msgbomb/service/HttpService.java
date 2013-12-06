@@ -19,10 +19,44 @@ public class HttpService {
      *            发送请求的URL
      * @return URL 所代表远程资源的响应结果
      */
+    private static int s_getCount = 0;
+    private static int e_getCount = 0;
+    private static int s_postCount = 0;
+    private static int e_postCount = 0;
+
+    public static int getS_getCount() {
+        return s_getCount;
+    }
+
+    public static int getE_postCount() {
+        return e_postCount;
+    }
+
+    public static int getS_postCount() {
+        return s_postCount;
+    }
+
+    public static int getE_getCount() {
+        return e_getCount;
+    }
+
+    public static int getTotalAttack(){
+        return s_getCount + e_postCount+ e_getCount + s_postCount;
+    }
+    public static int getSucTotalAttack(){
+        return s_getCount +  s_postCount;
+    }
+    public static int getEroTotalAttack(){
+        return e_postCount+ e_getCount;
+    }
+
+
+
     public static String sendGet(String url) {
         String result = "";
         BufferedReader in = null;
         try {
+
             String urlNameString = url;
             URL realUrl = new URL(urlNameString);
             // 打开和URL之间的连接
@@ -47,7 +81,9 @@ public class HttpService {
             while ((line = in.readLine()) != null) {
                 result += line;
             }
+            s_getCount ++;
         } catch (Exception e) {
+            e_getCount ++;
             Log.d("---发送GET请求出现异常---", e.toString());
             e.printStackTrace();
         }
@@ -107,7 +143,9 @@ public class HttpService {
             while ((line = in.readLine()) != null) {
                 result += line;
             }
+            s_postCount++;
         } catch (Exception e) {
+            e_postCount++;
             Log.d("---发送POST请求出现异常！---", e.toString());
             e.printStackTrace();
         }
