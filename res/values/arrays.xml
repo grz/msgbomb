@@ -22,20 +22,20 @@
         <item>http://read.10086.cn/www/firstpage/getValidateCode.action?phone={tel}&#38;sf=0</item>
     </string-array>
     <string-array name="post">
-        <item>http://reg.email.163.com/unireg/call.do?cmd=added.mobileverify.sendAcode||mobile={tel}&#38;uid={tel}@163.com&#38;mark:mobile_start</item>
-        <item>https://ssl.mail.163.com/e.mail.163.com/mobilemail/wap/vCodeSend.do||mobile={tel}</item>
-        <item>http://mail.sina.com.cn/cgi-bin/phonecode.php||phonenumber={tel}</item>
-        <item>http://reg.ztgame.com/registe/mobilePhoneRegister||type=isBindPhoneNum&#38;phoneNum={tel}</item>
-        <item>http://t.dianping.com/ajax/newregister||action=sendVerify&#38;phone={tel}</item>
-        <item>http://www.mysvw.com/cssc/Register.do?actionFlag=sendmessage||vmobile={tel}</item>
-        <item>https://passport.9you.com/sendmobilecode.php||mobile={tel}&#38;dataType=json</item>
-        <item>http://www.tftpay.com/newweb/service/nsend_chk_no.xhtm||REG_MBL_NO={tel}</item>
-        <item>http://my.xoyo.com/register/newSendPhone/0.7138306448145767||phone={tel}</item>
-        <item>http://www.vlook.cn/ajx/n/user.sendMobileForRegistValidateCode11||mobileNum={tel}&#38;vlkId=5df808d79f20b670a4c2b5fc6c0541dc</item>
-        <item>http://passport.wanmei.com/NoteAction.do?method=sendRegCode||mobile={tel}</item>
-        <item>http://account.autohome.com.cn/accountapi/createmobilecode||phone={tel}&#38;validcodetype=1</item>
-        <item>http://w.sohu.com/t2/qreg.do?suv=93874000235781||mobile={tel}</item>
-        <item>http://reg.jiayuan.com/libs/xajax/reguser.server.php?processUserMobile||xajax=processUserMobile&#38;xajaxargs[]=&#60;xjxquery\&#62;&#60;q&#62;mobile={tel}&#60;&#60;/q&#62;&#60;/xjxquery&#62;&#38;xajaxr=1380652724645</item>
+        <item>http://reg.email.163.com/unireg/call.do?cmd=added.mobileverify.sendAcode mobile={tel}&#38;uid={tel}@163.com&#38;mark:mobile_start</item>
+        <item>https://ssl.mail.163.com/e.mail.163.com/mobilemail/wap/vCodeSend.do mobile={tel}</item>
+        <item>http://mail.sina.com.cn/cgi-bin/phonecode.php phonenumber={tel}</item>
+        <item>http://reg.ztgame.com/registe/mobilePhoneRegister type=isBindPhoneNum&#38;phoneNum={tel}</item>
+        <item>http://t.dianping.com/ajax/newregister action=sendVerify&#38;phone={tel}</item>
+        <item>http://www.mysvw.com/cssc/Register.do?actionFlag=sendmessage vmobile={tel}</item>
+        <item>https://passport.9you.com/sendmobilecode.php mobile={tel}&#38;dataType=json</item>
+        <item>http://www.tftpay.com/newweb/service/nsend_chk_no.xhtm REG_MBL_NO={tel}</item>
+        <item>http://my.xoyo.com/register/newSendPhone/0.7138306448145767 phone={tel}</item>
+        <item>http://www.vlook.cn/ajx/n/user.sendMobileForRegistValidateCode11 mobileNum={tel}&#38;vlkId=5df808d79f20b670a4c2b5fc6c0541dc</item>
+        <item>http://passport.wanmei.com/NoteAction.do?method=sendRegCode mobile={tel}</item>
+        <item>http://account.autohome.com.cn/accountapi/createmobilecode phone={tel}&#38;validcodetype=1</item>
+        <item>http://w.sohu.com/t2/qreg.do?suv=93874000235781 mobile={tel}</item>
+        <item>http://reg.jiayuan.com/libs/xajax/reguser.server.php?processUserMobile xajax=processUserMobile&#38;xajaxargs[]=&#60;xjxquery\&#62;&#60;q&#62;mobile={tel}&#60;&#60;/q&#62;&#60;/xjxquery&#62;&#38;xajaxr=1380652724645</item>
         <item>http://api.pengyou.com/json.php?mod=mobilebind&#38;act=sendsms&#38;mobile={tel}&#38;g_tk=null</item>
         <item>http://i.360.cn/smsApi/sendsmscode?account={tel}&#38;condition=2&#38;r=0.8326570473673853&#38;callback=QiUserJsonP1354551431282</item>
         <item>http://w.yunpan.360.cn/intf.php?method=Sms.issue&#38;qid=177256015&#38;devtype=box&#38;v=1.9.2.1245&#38;devid=5b5b55bfc9f1f3113963b1f1350adc65&#38;devname=&#38;rtick=6969759&#38;sign=aa8d029e8036f3f9d555956388dc4c57&#38;ofmt=xml&#38;pid=home&#38;mobile={tel}&#38;contype=mdu&#38;token=3708649921.6.95535003.177256015.1366401362</item>
