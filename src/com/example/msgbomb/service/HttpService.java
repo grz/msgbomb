@@ -82,9 +82,10 @@ public class HttpService {
                 result += line;
             }
             s_getCount ++;
+            Log.d("---GET---S---" + s_getCount,"");
         } catch (Exception e) {
             e_getCount ++;
-            Log.d("---发送GET请求出现异常---", e.toString());
+            Log.d("---GET---E---" +e_getCount,e.toString());
             e.printStackTrace();
         }
         // 使用finally块来关闭输入流
@@ -144,9 +145,10 @@ public class HttpService {
                 result += line;
             }
             s_postCount++;
+            Log.d("---POST---S---"+s_postCount,"");
         } catch (Exception e) {
             e_postCount++;
-            Log.d("---发送POST请求出现异常！---", e.toString());
+            Log.d("---POST---E---" + e_postCount, e.toString());
             e.printStackTrace();
         }
         //使用finally块来关闭输出流、输入流

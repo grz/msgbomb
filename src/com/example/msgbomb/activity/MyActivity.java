@@ -34,8 +34,17 @@ public class MyActivity extends Activity {
         b_attack = (ImageButton) findViewById(R.id.b_attack);
         getUrls = getResources().getStringArray(R.array.get);
         postUrls = getResources().getStringArray(R.array.post);
+        //主线程跑网络连接相关
         //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         //StrictMode.setThreadPolicy(policy);
+
+        //Activity状态保存(被系统回收)
+        if(savedInstanceState != null){
+            String phone = savedInstanceState.getString("phone");
+            e_phoneNumber.setText(phone);
+            e_phoneNumber.setSelection(phone.length());
+        }
+
         e_phoneNumber.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -65,16 +74,8 @@ public class MyActivity extends Activity {
                 boolean isSuitedNum = validateNum(num);
                 if(isSuitedNum){
                     attack(num);
-                    new AlertDialog.Builder(MyActivity.this).
-                            setTitle("结果").
-                            setMessage("就在刚刚，你已经对" + num+"实行轰炸"+ HttpService.getTotalAttack()+"次"
-                                    +"\n成功次数：" + HttpService.getSucTotalAttack()
-                                    +"\n失败次数："+ HttpService.getEroTotalAttack()).setPositiveButton("确定",new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    }).create().show();
+                    //先执行后台逻辑再跑动画
+                    startMyAnimation(b_attack, R.anim.bombing);
                 }else{
 
                 }
@@ -82,9 +83,27 @@ public class MyActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        this.getSharedPreferences("numberStore",Context.MODE_PRIVATE).edit().putString("phone",e_phoneNumber.getText().toString()).commit();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        String phone = this.getSharedPreferences("numberStore",Context.MODE_PRIVATE).getString("phone", null);
+        e_phoneNumber.setText(phone);
+        e_phoneNumber.setSelection(phone.length());
+        super.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("phone",e_phoneNumber.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
     public void attack(final String num){
-        //先执行后台逻辑再跑动画
-        myStartAnimation(b_attack, R.anim.bombing);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -115,7 +134,7 @@ public class MyActivity extends Activity {
         }
     }
 
-    public void myStartAnimation(View v,int id){
+    public void startMyAnimation(View v,int id){
         Animation bombing = AnimationUtils.loadAnimation(this,id);
         if(bombing != null){
             bombing.setAnimationListener(new Animation.AnimationListener() {
@@ -127,6 +146,22 @@ public class MyActivity extends Activity {
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     //bombToast("end",false);
+                    //让主线程停下
+                    try {
+                        Thread.currentThread().join(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    new AlertDialog.Builder(MyActivity.this).
+                            setTitle("哈哈！").
+                            setMessage("就在刚刚，你已经对" + e_phoneNumber.getText().toString() + "实行轰炸" + HttpService.getTotalAttack() + "次" + "\n成功次数：" + HttpService.getSucTotalAttack() + "\n失败次数：" + HttpService.getEroTotalAttack()).
+                            setIcon(R.drawable.dialog_icon).
+                            setPositiveButton("确定",new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            }).create().show();
                 }
 
                 @Override
